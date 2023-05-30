@@ -66,4 +66,32 @@ echo $mensaje;
  define("ES_VALIDO", true);
  
 
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   punto 8                                  */
+/* -------------------------------------------------------------------------- */
+
+
+
+/**
+ * tipos de datos PHP
+ * int = sin decimal
+ * float = con decimal
+ * booleanos = true or false
+ * arrays = [1,2,3...]
+ * object = instanciones de clases que son definiciones de objetos 
+ * resource = refenrecias a recursos externos: conexiones dbs o archivos abiertos 
+ * null = variables sin valor o sin definir
+*/
+
+$logeado = true;
+$numero = 200;
+$float = 200.5;
+$nombre ="juan";
+$array = [];
+
+
+
 ?>
