@@ -37,4 +37,33 @@ printf("hola mundo %s ", $strSaludo);
 $mensaje = sprintf("hola %s", $strSaludo);
 echo $mensaje;
 
+
+/* -------------------------------------------------------------------------- */
+/*                                   punto 7                                  */
+/* -------------------------------------------------------------------------- */
+
+/**
+ *  variables y constantes
+ *  int string boolean
+ */
+
+ echo '<hr>';
+
+ $edad = 25;
+ $nombre = "juanc";
+ $es_valido = true;
+ 
+ // var_dump permite inspeccionar y depurar 
+ // el contenido de las variables en tiempo de ejecución. 
+ echo var_dump($nombre);
+ 
+ 
+ 
+ // Constantes
+ 
+ define('PI', 3.1416);
+ define('SALUNA', "Hola Mundis");
+ define("ES_VALIDO", true);
+ 
+
 ?>
