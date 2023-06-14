@@ -10,7 +10,7 @@
  *
  * etiquetas que marcan el inicio y fin del script php
  */
- echo '<h1>hola mundo cruel</h1>';
+echo '<h1>hola mundo cruel</h1>';
 
 
 
@@ -30,7 +30,7 @@
 echo 'texto a imprimir';
 
 // imprimir con formato
-$strSaludo = "mundi"; 
+$strSaludo = "mundi";
 printf("hola mundo %s ", $strSaludo);
 
 // devuelve el texto formateado NO LO IMPRIME
@@ -47,24 +47,24 @@ echo $mensaje;
  *  int string boolean
  */
 
- echo '<hr>';
+echo '<hr>';
 
- $edad = 25;
- $nombre = "juanc";
- $es_valido = true;
- 
- // var_dump permite inspeccionar y depurar 
- // el contenido de las variables en tiempo de ejecución. 
- echo var_dump($nombre);
- 
- 
- 
- // Constantes
- 
- define('PI', 3.1416);
- define('SALUNA', "Hola Mundis");
- define("ES_VALIDO", true);
- 
+$edad = 25;
+$nombre = "juanc";
+$es_valido = true;
+
+// var_dump permite inspeccionar y depurar 
+// el contenido de las variables en tiempo de ejecución. 
+echo var_dump($nombre);
+
+
+
+// Constantes
+
+define('PI', 3.1416);
+define('SALUNA', "Hola Mundis");
+define("ES_VALIDO", true);
+
 
 
 
@@ -84,12 +84,12 @@ echo '<hr>';
  * object = instanciones de clases que son definiciones de objetos 
  * resource = refenrecias a recursos externos: conexiones dbs o archivos abiertos 
  * null = variables sin valor o sin definir
-*/
+ */
 
 $logeado = true;
 $numero = 200;
 $float = 200.5;
-$nombre ="juan";
+$nombre = "juan";
 $array = [];
 
 
@@ -147,17 +147,18 @@ echo "<br/>";
 // touper y tolower
 $email1 = "correo@correo.com";
 $email2 = "Correo@correo.com";
-var_dump( strtolower($email1) ===  strtolower($email2));
+var_dump(strtolower($email1) ===  strtolower($email2));
 echo "<br/>";
 
 
 // replazar (buscado, remplazo, texto) 
-echo str_replace("AAA","J", $nombre_cliente);
+echo str_replace("AAA", "J", $nombre_cliente);
 echo "<br/>";
 
 
+
 echo "<h3> Arreglos, Arreglos asociativos y funciones para arreglos </h3>";
-$carrito = array("tablet","tv", "computer");
+$carrito = array("tablet", "tv", "computer");
 
 
 // buscar elementos en un array
@@ -165,7 +166,7 @@ $carrito = array("tablet","tv", "computer");
 // devuelve booleano
 
 $carrito[] = "new product";
-var_dump($carrito) ;
+var_dump($carrito);
 $a = array(array('p', 'h'), array('p', 'r'), 'o');
 
 if (in_array(array('p', 'h'), $a)) {
@@ -180,6 +181,21 @@ if (in_array('o', $a)) {
     echo "Se encontró 'o'\n";
 }
 
+
+// -- añadir al inicio 
+
+
+
+array_push($carrito, "iphone");
+
+
+
+
+
+
+// property_exists(this, propoiedad);
+
+
 /**
  * El resultado del ejemplo sería:
  *  Se encontró 'ph'
@@ -189,72 +205,79 @@ if (in_array('o', $a)) {
 
 // ordenar elementos de un arreglo
 // si lo muta
-$numeros = array(312,31,3,12,3);
+$numeros = array(312, 31, 3, 12, 3);
 sort($numeros); // de menor a mayor
 rsort($numeros); // de mayor a menor
 var_dump($numeros);
 
 
+$informacion = array(
+    "nombre" => "Juan",
+    "edad" => 25,
+    "ciudad" => "México DF"
+);
+
+
+asort($informacion);
+asort($informacion);
+ksort($informacion);
 
 /* -------------------------------------------------------------------------- */
-/*                                   traits                                   */
+/*                           1.8. Isset() y Empty()                           */
 /* -------------------------------------------------------------------------- */
 
 
-// Lector DB
-class DbReader extends Mysqli{}
-// Lector de archivos
-class FileReader extends SplFileObject{}
+/**
+ * isset()  comprueba si una variable o un elemento de un array está definido y no es null.
+ * empty() comprueba si una variable o un elemento de un array está vacío.
+*/
+
+/* -------------------------------------------------------------------------- */
+/*                       1.14. Json_encode y json_decode                      */
+/* -------------------------------------------------------------------------- */
 
 
-trait Singleton {
-    private static $instance;
-    public static function getInstance(){
-        if(!(self::$instance instanceof self)){
-            self::$instance = new self;
-        }
-        return self::$instance;
-    }
-}
-// Quitamos ahora las clases que extienden para hacer pruebas solo con los traits
-class DbReaderT {
-    use Singleton;
-}
-class FileReaderT {
-    use Singleton;
-}
+/**
+ * Json_encode convertir una estructura de datos en PHP en una cadena JSON
+ * json_decode convertir una cadena JSON a una estructura de datos en PHP 
+*/
 
+// --- Resumen Funciones más usadas en manipulación de data
 
-
-
-
-
-
-
-
-
-
-
-
+// array_flip() Intercambia las claves con sus valores correspondientes en un array.
+// array_fill() Rellena un array con un valor especificado.
+// array_filter() Filtra los elementos de un array utilizando una función de devolución de llamada.
+// array_map() Aplica una función a cada elemento de un array y devuelve un nuevo array con los
+// array_reduce() Reduce un array a un solo valor aplicando una función de devolución de llamada.
+// array_key_exists() Comprueba si una clave existe en un array.
+// in_array() Comprueba si un valor existe en un array.
+// array_rand() Devuelve una o varias claves aleatorias de un array
+// array_unique(): Elimina los valores duplicados de un array.
+// array_intersect(): Devuelve un array con los valores comunes a todos los arrays dados.
+// array_diff(): Devuelve un array con los valores del primer array que no están presentes en los arrays
+// array_push(): Agrega uno o más elementos al final de un array.
+// array_pop(): Extrae y elimina el último elemento de un array.
+// array_reverse(): Revierte el orden de los elementos en un array.
+// array_sum(): Devuelve la suma de todos los valores de un array numérico.
 
 
 
+/* -------------------------------------------------------------------------- */
+/*                    2.1.1. Modificadores de acceso en PHP                   */
+/* -------------------------------------------------------------------------- */
 
 
 
-
-
-
-
-
-
+// public: accesibles desde cualquier lugar, desde dentro de la clase, desde las clases heredadas o desde fuera de la clase. 
+// private: Los miembros declarados como private solo son accesibles desde dentro de la misma clase en la que se definen.
+// protected: son accesibles desde dentro de la misma clase y desde las clases heredadas (subclases).
 
 
 
 
-
-
-
+/* -------------------------------------------------------------------------- */
+/*                                 2.2. Clases                                */
+/* -------------------------------------------------------------------------- */
 
 
 
@@ -262,4 +285,39 @@ class FileReaderT {
 
 
 
-?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
