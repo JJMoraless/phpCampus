@@ -192,8 +192,74 @@ if (in_array('o', $a)) {
 $numeros = array(312,31,3,12,3);
 sort($numeros); // de menor a mayor
 rsort($numeros); // de mayor a menor
-
 var_dump($numeros);
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   traits                                   */
+/* -------------------------------------------------------------------------- */
+
+
+// Lector DB
+class DbReader extends Mysqli{}
+// Lector de archivos
+class FileReader extends SplFileObject{}
+
+
+trait Singleton {
+    private static $instance;
+    public static function getInstance(){
+        if(!(self::$instance instanceof self)){
+            self::$instance = new self;
+        }
+        return self::$instance;
+    }
+}
+// Quitamos ahora las clases que extienden para hacer pruebas solo con los traits
+class DbReaderT {
+    use Singleton;
+}
+class FileReaderT {
+    use Singleton;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>
